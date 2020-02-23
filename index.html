@@ -1,0 +1,89 @@
+<html>
+<head><title>javaScript</title></head>
+<body>
+<div id="box" style=" width:300px; height:300px; background-color:red;"> 
+</div>
+<br />
+<div>
+	pilihan warna box
+	<select id = "color-list">
+		<option value="red" checked>red</option>
+		<option value="green" checked>green</option>
+		<option value="yellow" checked>yellow</option>
+		<option value="gray" checked>gray</option>
+		<option value="purple" checked>purple</option>
+	</select><br>
+	pilihan lebar box
+	<select id = "width-list">
+		<option value="400px" checked>400px</option>
+		<option value="500px" checked>500px</option>
+		<option value="600px" checked>600px</option>
+	</select><br>
+	pilihan tinggi box
+	<select id = "height-list">
+		<option value="400px" checked>400px</option>
+		<option value="500px" checked>500px</option>
+		<option value="600px" checked>600px</option>
+	</select><br>
+	tampilkan box
+	<select id = "show-list">
+		<option value="show" checked>show</option>
+		<option value="hide" checked>hide</option>
+	</select>
+</div>
+</body>
+</html>
+<script src = "https://code.jquery.com/jquery-3.4.1.slim.js">
+</script>
+<script>
+	$(document).ready(function(){
+	var box = $('#box');
+	var colorList = $('#color-list');
+	var heightList = $('#height-list');
+	var widthList = $('#width-list');
+	var boxshow = $('#show-list');
+		
+		colorList.on('change', function(eventSelect){
+		box.css('backgroundColor', eventSelect.target.value);
+		});
+		
+		heightList.on('change', function(eventSelect){
+		box.css('height', eventSelect.target.value);
+		});
+		
+		widthList.on('change', function(eventSelect){
+		box.css('width', eventSelect.target.value);
+		});
+		
+		boxshow.on('change', function(eventSelect){
+		if (eventSelect.target.value == "show"){
+		box.show();
+		}
+		else{
+		box.hide();
+		}})
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
